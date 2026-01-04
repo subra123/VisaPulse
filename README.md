@@ -48,11 +48,4 @@ By combining **Visa product data**, **user context (location, time, profile)**, 
 ## 🛠️ System Architecture
 
 The system is designed to be **PCI-DSS aware by design**, with strict separation between sensitive card data and AI processing.
-
-```mermaid
-graph LR
-    A[User UI] -- Masked Card & Context --> B[Backend Orchestrator]
-    B -- BIN Lookup --> C{Visa Product Database}
-    C -- Raw Benefits --> D[RAG Engine]
-    D -- Context + Benefits --> E[Google Gemini 1.5 Flash]
-    E -- Personalized Output --> A
+![System Architecture](./mermaid-diagram(1).svg)
